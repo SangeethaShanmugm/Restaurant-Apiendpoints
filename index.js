@@ -2,10 +2,12 @@ const express = require("express"); //third party package
 const mongo = require("mongodb");
 const MongoClient = mongo.MongoClient;
 var cors = require("cors");
+require("dotenv").config();
 const app = express();
 const PORT = 5000;
 
-const MONGO_URL = "mongodb://127.0.0.1:27017";
+const MONGO_URL = process.env.MONGO_URL;
+// "mongodb://127.0.0.1:27017";
 app.use(cors());
 app.use(express.json()); //Inbuilt middleware
 //"mongodb://localhost:27017"
